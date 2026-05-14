@@ -77,13 +77,16 @@ A imagem de um conjunto sob uma função é o conjunto de todos os resultados po
 ​Para todo $x$ tal que $0 < x < 1$, o valor de $floor(x)$ é 0.
 ​Para $x = 1$, o valor de $floor(x)$ é 1.
 ​Imagem: ${0, 1}$
+
 ​Para o conjunto $[0, 1)$: (inclui o 0, mas não o 1)
 ​Para todo $x$ tal que $0 < x < 1$, o valor de $floor(x)$ é 0.
 ​Imagem: ${0}$
+
 ​Para o conjunto $(0, 1]$: (não inclui o 0, mas inclui o 1)
 ​Para todo $x$ tal que $0 < x < 1$, o valor de $floor(x)$ é 0.
 ​Para $x = 1$, o valor de $floor(x)$ é 1.
 ​Imagem: ${0, 1}$
+
 ​Para o conjunto $(0, 1)$: (não inclui o 0 nem o 1)
 ​**Para todo $x$ tal que $0 < x < 1$, o valor de $floor(x)$ é 0.**
 **​Imagem: ${0}$**

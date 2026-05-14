@@ -66,6 +66,7 @@ Logo, $f(x)$ pertence a interseção, ou seja $f(x) \in C \cap D$.
 
 **Como ambas as inclusões foram satisfeitas, a igualdade está provada.**
 
+---
 ## Questão 4
 
 **a)** Imagens dos conjuntos $[0, 1], [0, 1), (0, 1]$ e $(0, 1)$
@@ -115,9 +116,146 @@ $floor(x) = |y| = y$
 
 Como foi demonstrado que para todo $y \in \mathbb{Z}$ existe um $x \in \mathbb{R}$ correspondente (basta que x seja o próprio y), **a função cobre todo o contradomínio e, logo, é sobrejetiva.**
 
-## Questão 20
+---
+## Questão 14
 
-20.
+Sejam $A$ e $B$ conjuntos infinitos enumeráveis. Então existem bijeções
+
+$$f:\mathbb{N}\to A \qquad \text{e} \qquad g:\mathbb{N}\to B.$$
+
+Assim, podemos escrever
+
+$$A=\{a_1,a_2,a_3,\ldots\}$$
+
+e
+
+$$B=\{b_1,b_2,b_3,\ldots\}.$$
+
+Logo,
+
+$$A\times B=\{(a_i,b_j)\; ;\; i,j\in\mathbb{N}\}.$$
+
+Para mostrar que $A\times B$ é enumerável, basta mostrar que $\mathbb{N}\times\mathbb{N}$ é enumerável.
+
+Considere os pares $(i,j)\in\mathbb{N}\times\mathbb{N}$. Organizamos esses pares em diagonais definidas por
+
+$$D_n=\{(i,j)\in\mathbb{N}\times\mathbb{N} : i+j=n\}.$$
+
+Cada diagonal possui quantidade finita de elementos. Por exemplo,
+
+$$D_2=\{(1,1)\},$$
+
+$$D_3=\{(1,2),(2,1)\},$$
+
+$$D_4=\{(1,3),(2,2),(3,1)\},$$
+
+e assim sucessivamente.
+
+Enumerando os elementos diagonal por diagonal, obtemos a sequência
+
+$$(1,1),(1,2),(2,1),(1,3),(2,2),(3,1),\ldots$$
+
+Todo par $(i,j)$ pertence exatamente à diagonal $D_{i+j}$. Logo, todo elemento de $\mathbb{N}\times\mathbb{N}$ aparece em alguma posição dessa enumeração.
+
+Portanto, existe uma bijeção entre $\mathbb{N}$ e $\mathbb{N}\times\mathbb{N}$, isto é, $\mathbb{N}\times\mathbb{N}$ é enumerável.
+
+Como $A\times B$ está em bijeção com $\mathbb{N}\times\mathbb{N}$ pela aplicação
+
+$$(i,j)\mapsto (a_i,b_j),$$
+
+segue que $A\times B$ é infinito enumerável.
+
+---
+
+## Questão 15
+
+Seja $A$ finito e $B$ infinito enumerável, com $A\cap B=\varnothing$.
+
+Como $A$ é finito, existe $k\in\mathbb{N}$ tal que
+
+$$A=\{a_1,a_2,\ldots,a_k\}.$$
+
+Como $B$ é infinito enumerável,
+
+$$B=\{b_1,b_2,b_3,\ldots\}.$$
+
+Definimos a função
+
+$$h:\mathbb{N}\to A\cup B$$
+
+por
+
+$$h(n)= \begin{cases} a_n, & \text{se } 1\leq n\leq k,\\ b_{n-k}, & \text{se } n>k. \end{cases}$$
+
+Como $A\cap B=\varnothing$, nenhum elemento de $A$ coincide com um elemento de $B$.
+
+Além disso,
+
+- os elementos $a_1,\ldots,a_k$ são distintos entre si;
+    
+- os elementos $b_1,b_2,\ldots$ são distintos entre si.
+    
+
+Logo, números naturais diferentes possuem imagens diferentes por $h$. Portanto, $h$ é injetiva.
+
+Agora, seja $x\in A\cup B$.
+
+- Se $x\in A$, então existe $i\in\{1,\ldots,k\}$ tal que $x=a_i=h(i)$.
+    
+- Se $x\in B$, então existe $j\in\mathbb{N}$ tal que $x=b_j=h(k+j)$.
+    
+
+Assim, todo elemento de $A\cup B$ pertence à imagem de $h$. Logo, $h$ é sobrejetiva.
+
+Concluímos que $h$ é bijetiva. Portanto, $A\cup B$ é infinito enumerável.
+
+---
+
+## Questão 16
+
+Sejam $A$ e $B$ conjuntos infinitos enumeráveis. Então podemos escrever
+
+$$A=\{a_1,a_2,a_3,\ldots\}$$
+
+e
+
+$$B=\{b_1,b_2,b_3,\ldots\}.$$
+
+Considere a sequência obtida intercalando os elementos de $A$ e $B$:
+
+$$a_1,b_1,a_2,b_2,a_3,b_3,\ldots$$
+
+Essa sequência contém todos os elementos de $A\cup B$, embora alguns possam aparecer mais de uma vez quando $A\cap B\neq\varnothing$.
+
+Construímos então uma nova sequência eliminando cada repetição após sua primeira aparição. Denotemos essa sequência por
+
+$$c_1,c_2,c_3,\ldots$$
+
+Nessa nova sequência,
+
+- todo elemento de $A\cup B$ aparece pelo menos uma vez;
+    
+- nenhum elemento aparece mais de uma vez.
+    
+
+Definimos então a função
+
+$$f:\mathbb{N}\to A\cup B$$
+
+por
+
+$$f(n)=c_n.$$
+
+A função $f$ é injetiva, pois os termos da sequência $c_1,c_2,c_3,\ldots$ são todos distintos.
+
+Além disso, $f$ é sobrejetiva, pois todo elemento de $A\cup B$ aparece em algum termo da sequência.
+
+Logo, $f$ é bijetiva.
+
+Portanto, $A\cup B$ é infinito enumerável.
+
+---
+## Questão 20
 ### Dicionário:
 
 $<>$ - Representa a lista vazia

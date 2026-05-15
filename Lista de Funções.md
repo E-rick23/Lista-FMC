@@ -120,6 +120,87 @@ $floor(x) = |y| = y$
 Como foi demonstrado que para todo $y \in \mathbb{Z}$ existe um $x \in \mathbb{R}$ correspondente (basta que x seja o próprio y), **a função cobre todo o contradomínio e, logo, é sobrejetiva.**
 
 ---
+## Questão 7
+
+**Provar $f$ bijetiva $\Longleftrightarrow f$ possui inversa:**
+
+Isso significa que devemos provar $f$ é bijetiva $\Rightarrow f$ possui inversa *e* $f$ possui inversa $\Rightarrow f$ é bijetiva:
+
+### **Provar $f$ bijetiva $\Rightarrow f$ possui inversa:**
+
+Como $f$ é bijetiva, então $f$ é injetiva e $f$ é sobrejetiva (Def. bijetiva), ou seja,  $\forall x_1, x_2 \in A$, se $f(x_1) = f(x_2)$ então $x_1 = x_2$ e $\forall y \in B, \exists x \in A$, t.q., $f(x) = y$. (Por definição de injetividade e sobrejetividade)
+
+Considere uma função $g: B \rightarrow A$, onde $g = \{(y, x) \in B \times A \mid f(x) = y\}$.
+Para $g$ ser bem definida, deve-se provar a existência e unicidade.
+
+#### **Existência:**
+Como $f$ é sobrejetiva, $\forall y \in B, \exists x \in A, t.q., f(x) = y$. Portanto para todo $y \in B$, há um par $(y, x) \in g$.  Isso prova a existência.
+
+#### **Unicidade:**
+Tome $y \in B$ arbitrário.
+Tome $x_1, x_2 \in A$ arbitrários distintos, suponha um $y \in B$ onde $(y, x_1) \in g$ e $(y, x_2) \in g$. Ou seja, $f(x_1) = y$ e $f(x_2) = y$.
+
+Pela injetividade de $f$, como $f(x_1) = f(x_2)$, então $x_1 = x_2$.
+No entanto, $x_1$ e $x_2$ são distintos, isso é uma contradição. 
+
+Portanto não pode haver $(y, x_1) \in g$ e $(y, x_2) \in g$ simultaneamente.
+Ou seja, $g$ obedece a Unicidade.
+
+Como $g$ atende à unicidade e existência, $g$ é bem definida.
+
+Além disso, pela definição de $g$, pode se dizer que $g(y) = x$.
+Note:
+
+$$\begin{aligned}
+(g \circ f)(x) &= g(f(x)) \quad && \text{(Composição)} \\
+&= g(y) \quad && (f(x) = y) \\
+&= x \quad && (g(y) = x)
+\end{aligned}$$
+
+$$\begin{aligned}
+(f \circ g)(y) &= f(g(y)) \quad && \text{(Composição)} \\
+&= f(x) \quad && (g(y) = x) \\
+&= y \quad && (f(x) = y)
+\end{aligned}$$
+
+Como a composição $f \circ g$ e $g \circ f$ atendem a definição de identidade. Pode-se afirmar, pela definição de função Inversa, que $g$ é a inversa de $f$.
+
+### **Provar $f$ possui inversa $\Rightarrow f$ é bijetiva:**
+
+Pela definição de função aplicada a $f: A \to B$, temos $\forall x \in A, \exists y \in B, t.q., f(x) = y$  e por definição de função aplicada a $f^{-1}: B \to A$ temos $\forall y \in B, \exists x \in A, t.q., f^{-1}(y) = x$ 
+
+Temos que: Provar $f$ bijetiva $\Leftrightarrow$ Provar que $f$ é injetiva e $f$ é sobrejetiva.
+
+**Injetividade:**
+Tome $x_1, x_2 \in A$ arbitrários. Suponha $f(x_1) = f(x_2)$.
+
+$$\begin{aligned}
+x_1 &= I_{A}(x_1) \quad && \text{(Identidade)} \\
+&= f^{-1}(f(x_1)) \quad && \text{(Composição das Inversas)} \\
+&= f^{-1}(f(x_2)) \quad && (f(x_1) = f(x_2)) \\
+&= I_{A}(x_2) \quad && \text{(Composição das Inversas)} \\
+&= x_2
+\end{aligned}$$
+
+Como $x_1 = x_2$, podemos afirmar que $f$ é injetiva.
+
+**Provar $f$ é sobrejetiva:** 
+Tome $y \in B$ arbitrário. E tome um $x \in A$ tal que $x = f^{-1}(y)$.
+Note que:
+
+$$\begin{aligned}
+f(x) &= f(f^{-1}(y)) \quad && \text{(Def. inversa)}\\
+&= I(y) \quad && \text{(Composição das inversas)} \\
+&= y \quad && \text{(Def. identidade)}
+\end{aligned}$$
+
+Como $f(x) = y$, então $f$ é sobrejetiva.
+
+Como $f$ é injetiva e sobrejetiva, logo $f$ é bijetiva.
+
+Portanto, mostramos que uma função $f: A \rightarrow B$ é bijetiva se, e somente se, ela possui inversa $f^{-1}: B \rightarrow A$.
+
+---
 ## Questão 14
 
 Sejam $A$ e $B$ conjuntos infinitos enumeráveis. Então existem bijeções

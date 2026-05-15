@@ -120,6 +120,112 @@ $floor(x) = |y| = y$
 Como foi demonstrado que para todo $y \in \mathbb{Z}$ existe um $x \in \mathbb{R}$ correspondente (basta que x seja o próprio y), **a função cobre todo o contradomínio e, logo, é sobrejetiva.**
 
 ---
+
+## Questão 6
+
+Sejam $f: X \to Y$ e $g: Y \to Z$ duas funções bijetivas. Para provar que a função composta $g \circ f: X \to Z$ é uma bijeção, deve-se mostrar que ela é injetiva e sobrejetiva ao mesmo tempo.
+
+**• Prova da Injetividade:**
+
+Sejam $x_1, x_2 \in X$ quaisquer, tais que $(g \circ f)(x_1) = (g \circ f)(x_2)$
+
+$\Rightarrow g(f(x_1)) = g(f(x_2))$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pela def. de função composta)*
+
+$\Rightarrow f(x_1) = f(x_2)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $g$ é injetiva. Se as imagens por $g$ são iguais, seus argumentos devem ser iguais)*
+
+$\Rightarrow x_1 = x_2$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $f$ também é injetiva, pelo mesmo motivo acima)*
+
+Como partimos de $(g \circ f)(x_1) = (g \circ f)(x_2)$ e concluímos que $x_1 = x_2$, a função $g \circ f$ é injetiva.
+
+**• Prova da Sobrejetividade:**
+
+Seja $z \in Z$ um elemento qualquer.
+
+$\Rightarrow \exists y \in Y$ tal que $g(y) = z$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $g$ é sobrejetiva)*
+
+$\Rightarrow$ Para $y, \exists x \in X$ tal que $f(x) = y$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $f$ é sobrejetiva)*
+
+$\Rightarrow g(f(x)) = g(y)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Aplicando $g$ em ambos os lados)*
+
+$\Rightarrow (g \circ f)(x) = z$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pela def. de função composta e substituindo $g(y)$ por $z$)*
+
+Como $\forall z \in Z, \exists x \in X$ tal que $(g \circ f)(x) = z$, a função $g \circ f$ é sobrejetiva.
+
+Portanto, como $g \circ f$ demonstrou ser injetiva e sobrejetiva, por definição, é uma função bijetiva.
+
+---
+
+## Questão 8
+
+Sabemos, por hipótese, que $f$ é bijetiva, logo sua inversa existe e a relação $f(x) = y \iff f^{-1}(y) = x$ é verdadeira. Para provar que $f^{-1}$ é bijetiva, devemos mostrar que ela é injetiva e sobrejetiva.
+
+**• Prova da Injetividade de $f^{-1}$:**
+
+Sejam $y_1, y_2 \in B$ dois elementos quaisquer, tais que $f^{-1}(y_1) = f^{-1}(y_2)$
+
+$\Rightarrow f(f^{-1}(y_1)) = f(f^{-1}(y_2))$ &nbsp;&nbsp;&nbsp;&nbsp; *(Aplicando $f$ em ambos os lados)*
+
+$\Rightarrow y_1 = y_2$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $f \circ f^{-1} = Id_B$, ou seja, $Id_B(y) = y$)*
+
+Como partimos de $f^{-1}(y_1) = f^{-1}(y_2)$ e chegamos em $y_1 = y_2$, a função $f^{-1}$ é injetiva.
+
+**• Prova da Sobrejetividade de $f^{-1}$:**
+
+Seja $x \in A$ um elemento qualquer.
+
+$\Rightarrow \exists y \in B$, tal que $y = f(x)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pela def. de função)*
+
+$\Rightarrow f^{-1}(y) = f^{-1}(f(x))$ &nbsp;&nbsp;&nbsp;&nbsp; *(Aplicando $f^{-1}$ em ambos os lados)*
+
+$\Rightarrow f^{-1}(y) = x$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pois $f^{-1} \circ f = Id_A$, ou seja, $Id_A(x) = x$)*
+
+Como mostramos que $\forall x \in A$ (contradomínio) existe $y \in B$ (domínio), tal que $f^{-1}(y) = x$, logo $f^{-1}$ é sobrejetiva.
+
+Portanto, como $f^{-1}$ é injetiva e sobrejetiva, ela é bijetiva.
+
+---
+
+## Questão 9
+
+Para provar que $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ devemos mostrar que a composição de $(g \circ f)$ com $(f^{-1} \circ g^{-1})$ resulta na identidade nos dois sentidos.
+
+Por hipótese, sabemos que $f: A \to B$ e $g: B \to C$ são bijeções, logo suas inversas $f^{-1}$ e $g^{-1}$ existem.
+
+**• Mostrar que $((f^{-1} \circ g^{-1}) \circ (g \circ f))(x) = x$, para todo $x \in A$:**
+
+Seja $x \in A$ um elemento qualquer.
+
+$\Rightarrow ((f^{-1} \circ g^{-1}) \circ (g \circ f))(x)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Aplicando a composta ao $x$)*
+
+$\Rightarrow (f^{-1} \circ (g^{-1} \circ g) \circ f)(x)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pela associatividade)*
+
+$\Rightarrow (f^{-1} \circ Id_B \circ f)(x)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Def. de inversa: $g^{-1} \circ g = Id_B$)*
+
+$\Rightarrow (f^{-1} \circ f)(x)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Prop. da identidade: $f^{-1} \circ Id_B = f^{-1}$)*
+
+$\Rightarrow Id_A(x) = x$ &nbsp;&nbsp;&nbsp;&nbsp; *(Def. de inversa: $f^{-1} \circ f = Id_A$)*
+
+**• Mostrar que $((g \circ f) \circ (f^{-1} \circ g^{-1}))(z) = z$, para todo $z \in C$:**
+
+Seja $z \in C$ um elemento qualquer.
+
+$\Rightarrow ((g \circ f) \circ (f^{-1} \circ g^{-1}))(z)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Aplicando a composta ao $z$)*
+
+$\Rightarrow (g \circ (f \circ f^{-1}) \circ g^{-1})(z)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Pela associatividade)*
+
+$\Rightarrow (g \circ Id_B \circ g^{-1})(z)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Def. de inversa: $f \circ f^{-1} = Id_B$)*
+
+$\Rightarrow (g \circ g^{-1})(z)$ &nbsp;&nbsp;&nbsp;&nbsp; *(Prop. da identidade: $g \circ Id_B = g$)*
+
+$\Rightarrow Id_C(z) = z$ &nbsp;&nbsp;&nbsp;&nbsp; *(Def. de inversa: $g \circ g^{-1} = Id_C$)*
+
+### Conclusão
+
+Como a composição resulta na função identidade tanto à esquerda (gerando $Id_A$) quanto à direita (gerando $Id_C$), fica demonstrado que:
+$$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
+
+---
+
 ## Questão 14
 
 Sejam $A$ e $B$ conjuntos infinitos enumeráveis. Então existem bijeções

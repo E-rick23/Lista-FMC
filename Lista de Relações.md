@@ -59,8 +59,8 @@ Portanto, $(R \circ S)^{-1} = S^{-1} \circ R^{-1}$.
 ---
 # Questão 5
 
-Considere $len(w)$ como a quantidade de dígitos de uma string $w \in 2^* $.
-Para todo $n \in \mathbb{Z}^+$, considere a definição simplificada da relação $\sim_n \subseteq 2^* \times 2^* $, tal que para quaisquer $a, b \in 2^*$:
+Considere $len(w)$ como a quantidade de dígitos de uma string $w \in 2^*$.
+Para todo $n \in \mathbb{Z}^+$, considere a definição simplificada da relação $\sim_n \subseteq 2^* \times 2^*$, tal que para quaisquer $a, b \in 2^*$:
 
 * **Caso 1:** se $len(a) < n$ e $len(b) < n \text{ então, } (a,b) \in \sim_n$
 * **Caso 2:** se $len(a) \ge n$ e $len(b) \ge n$ e os $n$ primeiros dígitos de $a$ e $b$ forem iguais $\text{ então, } (a,b) \in \sim_n$
